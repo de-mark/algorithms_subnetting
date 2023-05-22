@@ -19,7 +19,9 @@ const processSubnet = () => {
     let currentNetwork = networkComponent.value;
     let currentSubnet = dropdownComponent.value;
 
-        alert(`NETWORK - ${currentNetwork} SUBNET - ${currentSubnet}`);
+    let binaryNetwork = currentNetwork.split(".").map((octet) => parseInt(octet).toString(2));
+
+        alert(`NETWORK - ${binaryNetwork.join(".")}`);
 }
 
 
