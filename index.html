@@ -10,12 +10,12 @@
 <body>
     <div class="form">
         <p><b>Original Network</b></p>
-        <input type="text" /> / 
+        <input id="networkEntry" type="text" /> / 
         <select id="subnetDropdown">
             <!-- Options will be generated via JS-->
         </select>
         <span id="exampleSubnetMask"></span>
-        <button>Process</button>
+        <button onclick="processSubnet()">Process</button>
     </div>
     <div>
         <table>
