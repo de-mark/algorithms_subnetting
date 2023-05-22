@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    transition-duration: .2s;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: .25rem;
+    margin: 0;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: .45rem;
+    font-weight: bolder;
+    letter-spacing: .15rem;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}

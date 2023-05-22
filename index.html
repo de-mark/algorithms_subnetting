@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnetting Example</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+    <div class="form">
+        <p><b>Original Network</b></p>
+        <input type="text" /> / 
+        <select id="subnetDropdown">
+            <!-- Options will be generated via JS-->
+        </select>
+        <span id="exampleSubnetMask"></span>
+        <button>Process</button>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Network
+                    </th>
+                    <th>
+                        Number of TOTAL hosts
+                    </th>
+                    <th>
+                        Number of USEABLE hosts
+                    </th>
+                    <th>
+                        First Host
+                    </th>
+                    <th>
+                        Last Host
+                    </th>
+                    <th>
+                        Broadcast
+                    </th>
+                    <th>
+                        Next Subnet
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="cell_network">
+                        192.0.0.0
+                    </td>
+                    <td id="cell_numhosts">
+                        256
+                    </td>
+                    <td id="cell_numhosts">
+                        254
+                    </td>
+                    <td id="cell_firsthost">
+                        192.0.0.1
+                    </td>
+                    <td id="cell_lasthost">
+                        192.0.0.254
+                    </td>
+                    <td id="cell_broadcast">
+                        192.0.0.255
+                    </td>
+                    <td id="cell_nextsub">
+                        192.0.1.0
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
