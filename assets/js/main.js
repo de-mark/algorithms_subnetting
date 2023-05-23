@@ -2,7 +2,7 @@ const networkComponent = document.getElementById("networkEntry");
 const dropdownComponent = document.getElementById("subnetDropdown");
 const subnetMaskComponent = document.getElementById("exampleSubnetMask");
 
-
+// createSubnetDropdown : Adds the possible subnet options to the dropdown (I could have done this manually, but got lazy)
 const createSubnetDropdown = () => {
     dropdownComponent.innerHTML = ""
 
@@ -10,7 +10,6 @@ const createSubnetDropdown = () => {
         dropdownComponent.innerHTML += `
         <option value="${i}">/${i}</option>
         `;
-        //document.getElementById("exampleSubnetMask")
     }
     dropdownComponent.value = "30";
     displaySubnetMask();
@@ -19,7 +18,7 @@ const createSubnetDropdown = () => {
 // getSubnetMaskBinary : Checks the dropdown for the selected subnet and returns an array of that subnet in binary
 const getSubnetMaskBinary = () => {
     let currentSubnet = parseInt(dropdownComponent.value);
-    let binarySubnetMask = [...Array(32).keys()].map((_) => "1");
+    let binarySubnetMask = [...Array(currentSubnet).keys()].map((_) => "1");
 
     for (let i = currentSubnet; i < 32; i++) {
         binarySubnetMask[i] = "0";
@@ -58,7 +57,13 @@ const processSubnet = () => {
 
     let binaryNetwork = currentNetwork.split(".").map((octet) => parseInt(octet).toString(2));
 
-    alert(`NETWORK - ${binaryNetwork.join(".")}`);
+    document.getElementById("cell_network").innerHTML = currentNetwork;
+    document.getElementById("cell_totalhosts").innerHTML = nTotalHosts;
+    document.getElementById("cell_numhosts").innerHTML = nUseableHosts;
+    //document.getElementById("cell_firsthost").innerHTML = 
+    // document.getElementById("cell_lasthost").innerHTML = 
+    // document.getElementById("cell_broadcast").innerHTML =
+    // document.getElementById("cell_nextsub").innerHTML =
 }
 
 
