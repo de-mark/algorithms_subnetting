@@ -11,7 +11,7 @@ const createSubnetDropdown = () => {
         <option value="${i}">/${i}</option>
         `;
     }
-    dropdownComponent.value = "30";
+    dropdownComponent.value = "24";
     displaySubnetMask();
 }
 
@@ -93,7 +93,8 @@ const padOctet = (octet) => {
 // and calculates / displays the (1) Network, (2) Total Hosts, (3) Useable Hosts, (4) First Host, (5) Last (useable) Host,
 // (6) Broadcast address, and (7) Next Network
 const processSubnet = () => {
-    let currentNetwork = networkComponent.value;
+    // Ensures that there's no symbols or spaces in the current network other than .'s
+    let currentNetwork = networkComponent.value.replace(/[.,\/#!$%+\^&\*;:{}=\-_`~()]/g,".").trim();
     let currentSubnet = dropdownComponent.value;
 
     let nTotalHosts = 2**(32-currentSubnet);
