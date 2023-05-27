@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subnetting Example</title>
+    <title>Subnet Calculator</title>
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
-    <div class="form">
+    <header>
+        <h1>IPv4 Subnetting Calculator</h1>
+    </header>
+    <main>
+        <p>Since every IPv4 address has been assigned, engineers have been forced to utilize subnetting to extend the lifetime of the IPv4 addressing system.</p>
+        <p>Subnets take a network range and split it into subnetworks. When done properly this:</p>
+        <ol>
+            <li>Speeds the network up</li>
+            <li>Allows for differing permissions per network</li>
+        </ol>
+        <p>Subnetting requires <b>an initial network request</b> and <b>a subnet mask</b>. The subnet mask tells the system where the divide between the network address and device address is.</p>
+        <p>The first address is known as the <b>Network Address</b>. Immediately after that, the <b>First Host Address</b> is typically given to the subnet's router. The <b>Broadcast Address</b> is always the last address on the subnet. Therefore, the useable hosts will always be two less than the total hosts.</p>
+    </main>
+    <div>
+        <h2>Calculate a Subnet for...</h2>
+    </div>
+    <div class="formGroup">
         <p><b>Original Network</b></p>
         <input id="networkEntry" type="text" /> / 
         <select id="subnetDropdown">

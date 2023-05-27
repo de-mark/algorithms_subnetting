@@ -75,6 +75,10 @@ const addBinary = (firstAddend, secondAddend) => {
     return newOctetsToParse.map((octet) => parseInt(octet, 2)).join(".");
 }
 
+
+// padOctet : Used by processSubnet to ensure that the decimal values are being properly padded
+// (.toString(2) will return a binary that is not necessarily 8 bytes and it is important to keep
+// the number of bytes for proper translation)
 const padOctet = (octet) => {
     let binary = parseInt(octet).toString(2);
 
@@ -82,11 +86,12 @@ const padOctet = (octet) => {
         binary = "0" + binary;
     }
 
-    // 1100 0000 . 0000 0000 . 0000 0000 . 0000 0000
-
     return binary;
 }
 
+// processSubnet : Runs when the user presses the "Process button"; takes the network and subnet values
+// and calculates / displays the (1) Network, (2) Total Hosts, (3) Useable Hosts, (4) First Host, (5) Last (useable) Host,
+// (6) Broadcast address, and (7) Next Network
 const processSubnet = () => {
     let currentNetwork = networkComponent.value;
     let currentSubnet = dropdownComponent.value;
@@ -113,6 +118,7 @@ const processSubnet = () => {
 }
 
 
-
+// init / main
 createSubnetDropdown();
+// Displays the subnet depending on the current value in the dropdown
 dropdownComponent.addEventListener("click", displaySubnetMask);
